@@ -1,0 +1,53 @@
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.darkmode-toggle__wrapper {
+    width: 60px;
+    height: 30px;
+    padding: 3px;
+    border: 2px solid rgb(20, 20, 20);
+    border-radius: 60px;
+    transition: background 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.darkmode-toggle__button {
+    height: 100%;
+    aspect-ratio: 1/1;
+    transform: translateX(30px);
+    border-radius: 50%;
+    background: rgb(20, 20, 20);
+    transition: transform 0.3s ease-in-out,
+                background 0.3s ease-in-out;
+}
+
+.darkmode-toggle__button::after {
+    position: absolute;
+    content: '';
+    width: 60%;
+    height: 60%;
+    background: white;
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+    scale: 0;
+    transform-origin: top right;
+    transition: scale 0.2s ease-in-out,
+                background 0.3s ease-in-out;
+}
+
+.darkmode-active {
+    background: rgb(20, 20, 20);
+}
+.darkmode-active .darkmode-toggle__button {
+    transform: translateX(0);
+    background: white;
+}
+
+.darkmode-active .darkmode-toggle__button::after{
+    scale: 1;
+    background: rgb(20, 20, 20);
+}
